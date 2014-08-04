@@ -1,0 +1,18 @@
+@* login Template File *@
+@(loginForm: Form[(String, String)])(implicit flash: play.api.mvc.Flash)
+@import helper._
+
+@main("Login"){
+	@flash.get("success").map{ msg =>
+		<span class="alert alert-success">@msg</span>
+	}
+	<legend>Login</legend>
+	@form(action = routes.Application.loginPost){
+		@inputText(loginForm("Email"))
+		@inputPassword(loginForm("Password"))
+		<button class="btn btn-primary">login</button>
+	}
+	@loginForm.globalError.map{ error =>	
+		<span class="alert alert-error">@{error.message}</span>
+	}
+}

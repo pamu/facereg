@@ -1,0 +1,19 @@
+@* signup Template File *@
+@(signupForm: Form[(String, String, String)])(implicit flash: play.api.mvc.Flash)
+@import helper._
+
+@main("Signup"){
+	@flash.get("success").map{ msg =>
+		<span class="alert alert-success">@msg</span>
+	}
+	<legend>Signup</legend>
+	@form(action = routes.Application.signupPost){
+		@inputText(signupForm("Email"))
+		@inputPassword(signupForm("Password"))
+		@inputPassword(signupForm("Retype-Password"))
+		<button class="btn btn-primary">Signup</button>
+	}
+	@signupForm.globalError.map{ error =>	
+		<span class="alert alert-error">@{error.message}</span>
+	}
+}

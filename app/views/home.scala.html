@@ -1,0 +1,25 @@
+@* home Template File *@
+@(userKey: Option[models.Tables.UserKey])
+
+@main("Home"){
+	<center>
+		<legend><a href=@routes.Application.logout>Logout</a></legend>
+	</center>
+	@userKey match {
+		case Some(userkey) => {
+			<div class="alert alert-success">
+				<center>
+					<legend>User Key: @{userkey.key}</legend>
+				</center>
+			</div>
+		}
+		case None => {
+			<div class="alert alert-error">
+				<center>
+					<legend>Can't fetch User Key, refresh to try again</legend>
+				</center>
+			</div>
+		}
+	}
+	
+}
