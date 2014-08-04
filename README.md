@@ -15,7 +15,7 @@ to access the service first get the user_key and then in the http header include
 
 then http request body should of the following format
 
-for training the face recognition model
+# for training the face recognition model #
 
 traget url for http request: http://domain:port/train or http://domain:port/smartTrain
 
@@ -32,7 +32,7 @@ reponse:
 {"success": "training done"}
 
 
-for recognize the subject
+# for recognizing the subject #
 
 traget url: http://domain:port/recognize
 
@@ -47,5 +47,4 @@ response body:
 "success": "match", 
 "subjectName": "wolverince", 
 "confidence": "1.0"
-} 
-
+}
