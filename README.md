@@ -1,4 +1,5 @@
-# README #
+# facereg
+Face Recognition Service
 
 To run this Application
 
@@ -9,7 +10,7 @@ To run this Application
 
 for example
 
-to access the service first get the user_key and then in the http header include the user_key 
+to access the service first get the user_key and then in the http header include the user_key
 
 "user_key": "skdkk2khek32ke2kek"
 
@@ -44,7 +45,7 @@ traget url: http://domain:port/recognize
 response body:
 
 {
-"success": "match", 
-"subjectName": "wolverince", 
+"success": "match",
+"subjectName": "wolverince",
 "confidence": "1.0"
 }
